@@ -1,0 +1,48 @@
+# Openshift Virtualization Demo
+
+This is a quick demo of the new virtualization feature in OpenShift
+
+WARNING: OpenShift Virtualization only supports bare metal at this time and this is only for demonstration purposes
+
+## Installation
+* Install Openshit 4.5.4
+* Login as a cluster admin
+* Install OpenShift Virtualization
+** Goto the Operators > Operator
+** Search for OpentShift Virtualization
+** Install the operator
+** This demo was tested using version 2.4.0
+* Create the Hyper Convereged Cluster
+** Goto the Opertors > installed Operaters 
+** Click on `CNV Operator Deployment` in the `OpenShift Virtualization` row
+** Click 'Create HyperConverged Cluster' button
+** Leave defaults and Create
+* Verify all Pods in the `openshift-cnv` project are started.
+* Turn on Emulation for AWS
+** Modify `kubevirt-config` Config Map in the openshift-cnv
+** Add `debug.useEmulation:'true'` under the data element
+----
+data:
+  debug.useEmulation: 'true'
+----
+
+## Create a Virtual machine
+* Create a new Projects
+** click `Create Project`
+** create a project with the name `a-vm`
+** This will also change your project context to 'a-vm'
+* Create a virtual machine
+** Goto Workloads > Virtualization
+* click `Create Virtual Machine` button, use `New with wizard`
+** Use the following settings
+*** Name: `cirros`
+*** Source: `URL`
+*** URL: `http://download.cirros-cloud.net/0.5.1/cirros-0.5.1-x86_64-disk.img`
+*** Operating System: 'Fedora 31 or higher'
+*** Favor: 'Small'
+*** Workload Profile: 'desktop'
+** click `Review and create` button
+** click `Start virtual machine on creation` and ` Creaste Virtual Machine`
+* Wait for the vm's status to be running
+* goto the console tab
+* When prompted loging with the user `cirros` and password `gocubsgo`
