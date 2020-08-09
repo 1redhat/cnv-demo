@@ -13,7 +13,7 @@ WARNING: OpenShift Virtualization only supports bare metal at this time and this
 ** Install the operator
 ** This demo was tested using version 2.4.0
 * Create the Hyper Convereged Cluster
-** Goto the Opertors > installed Operaters 
+** Go to the Opertors > installed Operaters 
 ** Click on `CNV Operator Deployment` in the `OpenShift Virtualization` row
 ** Click 'Create HyperConverged Cluster' button
 ** Leave defaults and Create
@@ -28,12 +28,12 @@ data:
 
 ## Create a Virtual machine
 * Create a new Projects
-** click `Create Project`
-** create a project with the name `a-vm`
+** Click `Create Project`
+** Create a project with the name `a-vm`
 ** This will also change your project context to 'a-vm'
-* Create a virtual machine
+** Create a virtual machine
 ** Goto Workloads > Virtualization
-* click `Create Virtual Machine` button, use `New with wizard`
+* Click `Create Virtual Machine` button, use `New with wizard`
 ** Use the following settings
 *** Name: `cirros`
 *** Source: `URL`
@@ -41,8 +41,11 @@ data:
 *** Operating System: 'Fedora 31 or higher'
 *** Favor: 'Small'
 *** Workload Profile: 'desktop'
-** click `Review and create` button
-** click `Start virtual machine on creation` and ` Creaste Virtual Machine`
+** Click `Review and create` button
+** Click `Start virtual machine on creation` and ` Creaste Virtual Machine`
 * Wait for the vm's status to be running
-* goto the console tab
+* Go to the console tab
 * When prompted loging with the user `cirros` and password `gocubsgo`
+
+## More
+* https://www.twitch.tv/videos/700221772[Twitch] video on OpenShift Virtualization
